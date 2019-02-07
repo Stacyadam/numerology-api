@@ -8,9 +8,9 @@ const sequelize = new Sequelize(process.env.DB, process.env.DB_USER, process.env
 	}
 });
 
-const User = sequelize.import('./User');
+const Entry = sequelize.import('./Entry');
 
 module.exports = {
-	User,
+	Entry,
 	sequelize
 };
