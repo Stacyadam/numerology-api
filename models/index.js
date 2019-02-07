@@ -13,11 +13,9 @@ const sequelize = new Sequelize(
 	}
 );
 
-const models = {
-	User: sequelize.import('./User')
-};
+const User = sequelize.import('./User');
 
 module.exports = {
-	models,
+	User,
 	sequelize
 };
