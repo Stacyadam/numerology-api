@@ -1,10 +1,14 @@
+const { sequelize } = require('./models');
+
 if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config();
 }
 
 const app = require('./app');
 
-app.set('port', process.env.PORT || 7777);
-const server = app.listen(app.get('port'), () => {
-	console.log(`Express running → PORT ${server.address().port}`);
+sequelize.sync().then(() => {
+	console.log('DB connection successful');
+	app.listen(process.env.PORT, () => {
+		console.log(`Example app listening on port ${process.env.PORT}!`);
+	});
 });
