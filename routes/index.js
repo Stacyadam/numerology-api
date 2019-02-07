@@ -7,5 +7,6 @@ router.get('/status', (req, res) => {
 });
 
 router.post('/create', userController.create);
+router.get('/users', userController.getAllUsers);
 
 module.exports = router;
